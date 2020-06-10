@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Flask app</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Kwate's sandbox</h1>
+        <strong
+          ><nav>
+            <ul class="menu">
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+            </ul>
+          </nav></strong
+        >
+      </div>
+    </header>
+    <div class="container">
+      <h1>Welcome to Aritcle Summarization</h1>
+      <p>
+        This site is a prototype API for summarizing articles giving an article
+        link.
+      </p>
+      <body>
+        <form name="intake" action="http://localhost:5000/summarizer" id="contactForm" method="POST">
+          <label for="articleLink">Article Link:</label>
+          <input
+            type="text"
+            name="article_url"
+            placeholder="Article link."
+          />
+          <input type="submit" />
+        </form>
+        <p>
+          <b>
+            {{error}}
+          </b> 
+        </p>
+      </body>
+    </div>
+  </body>
+</html>
